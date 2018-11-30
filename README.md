@@ -2,9 +2,9 @@
 Easy Weather Forecast Single-Page Web App with Flask
 
 ## Quick start
-$cd ezw
+$cd weather_app
 
 $export DARK_SKY_KEY={your Dark Sky API Key}
 
-$python ezw_app.py
+$python app.py
 
