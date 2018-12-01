@@ -6,5 +6,5 @@ $cd weather_app
 
 $export DARK_SKY_KEY={your Dark Sky API Key}
 
-$python app.py
+$python3 app.py
 

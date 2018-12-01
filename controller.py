@@ -13,7 +13,7 @@ option_list = "exclude=currently,minutely,hourly,alerts&units=si"
 class Controller:
 
     def getLocation(self, input_location):
-        location = Nominatim().geocode(input_location, language='en_US')
+        location = Nominatim(user_agent="my-application").geocode(input_location, language='en_US')
         return location
 
     def getWeatherReports(self, data, location):
