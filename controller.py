@@ -10,7 +10,7 @@ DARK_SKY_API_KEY = os.environ['DARK_SKY_KEY']
 option_list = "exclude=currently,minutely,hourly,alerts&units=si"
 
 
-class EZWController:
+class Controller:
 
     def getLocation(self, input_location):
         location = Nominatim().geocode(input_location, language='en_US')
@@ -51,9 +51,9 @@ class EZWController:
                 precip_prob *= 100
                 raining_chance = "%.2f%%" % (precip_prob)
 
-            ezw_wr = WeatherReport(report_date, max_temperature, min_temperature,
-                                   summary, raining_chance, icon)
+            wr = WeatherReport(report_date, max_temperature, min_temperature,
+                               summary, raining_chance, icon)
 
-            weather_reports.append(ezw_wr)
+            weather_reports.append(wr)
 
         return weather_reports
