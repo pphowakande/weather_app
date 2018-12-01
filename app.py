@@ -4,7 +4,7 @@
 
 from flask import Flask, render_template, request
 from flask_cors import CORS
-from ezw_controller import EZWController
+from controller import EZWController
 
 app = Flask(__name__)
 CORS(app)
@@ -43,7 +43,8 @@ def ezw():
         # 	print("report.min_temperature : ", report.min_temperature)
         # 	print("report.summary : ", report.summary)
 
-        report_template = render_template('reports.html', weather_address=ezw_address, weather_reports=ezw_reports)
+        report_template = render_template(
+            'reports.html', weather_address=ezw_address, weather_reports=ezw_reports)
 
         print("report_template : ", report_template)
     print("return----------------")
