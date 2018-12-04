@@ -13,7 +13,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/weather', methods=['POST', 'GET'])
+@app.route('/weather', methods=['POST'])
 def weather():
     if request.method == 'POST':
         data = request.json
@@ -33,8 +33,6 @@ def weather():
         report_template = render_template(
             'reports.html', weather_address=wf_address, weather_reports=wf_reports)
 
-        print("report_template : ", report_template)
-    print("return----------------")
     return report_template
 
 
